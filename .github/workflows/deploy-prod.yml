@@ -51,6 +51,10 @@ jobs:
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           image-name: ${{env.DOCKER_IMAGE_NAME}}
+      
+      - name: Show some info
+        run: |
+          echo "Docker image name: ${{env.DOCKER_IMAGE_NAME}}"
   
   Deploy-to-Azure:
     needs: Build-Docker-image
